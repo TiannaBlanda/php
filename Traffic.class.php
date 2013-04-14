@@ -23,7 +23,6 @@
 					$file 		= $value[2];
 					$session 	= $value[3];
 					header("Location: {$path}/{$file}?sid={$session}");
-					//header("Location: order.php?sid={$session->id()}");
 				}
 			}
 		}
