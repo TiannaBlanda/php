@@ -5,18 +5,9 @@
 		const SESSION_FALSE = 0; // Session does not exsist
 		
 		private $state = self::SESSION_FALSE; // Session state
-
 		private static $inst; // Session instance
-		
 		private function __construct() {}
 
-/**
-  *		Returns THE instance of 'Session'.
-  *		The session is automatically initialized if it wasn't.
-  *    
-  *		@return	object
-  **/
-    
 		public static function instance()
 		{
 			if (!isset(self::$inst))
@@ -27,12 +18,6 @@
 			return self::$inst;
 		}
 
-/**
-  *		(Re)starts the session.
-  *
-  *		@return	bool (TRUE if the session has been initialized, else FALSE.)
-  **/
-    
 		public function start()
 		{
 			if ($this->state === self::SESSION_FALSE)
@@ -42,27 +27,11 @@
 			return $this->state;
 		}
     
-/**
-  *		Stores datas in the session.
-  *		Example: $inst->foo = 'bar';
-  *    
-  *		@param	name	Name of the data
-  *		@param	value	Value of the data
-  *		@return	void
-  **/
-    
 		public function __set($name,$value)
 		{
 			$_SESSION[$name] = (string)$value;
 		}
 
-/**
-  *		Gets datas from the session.
-  *		Example: echo $inst->foo;
-  *		@param	name	Name of the data
-  *		@return	mixed	Stored data
-  **/
-    
 		public function __get($name)
 		{
 			if (isset($_SESSION[$name]))
@@ -71,12 +40,10 @@
 			}
 		}
     
-    
 		public function __isset($name)
 		{
 			return isset($_SESSION[$name]);
 		}
-		    
 		    
 		public function __unset($name)
 		{
@@ -88,11 +55,6 @@
 			return session_id();
 		}
 		
-/**
-  *		Destroys the current session.
-  *		@return	bool	TRUE = Session Delete
-  **/
-    
 		public function destroy()
 		{
 			if ($this->state === self::SESSION_TRUE)
