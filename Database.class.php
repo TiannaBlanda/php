@@ -2,7 +2,7 @@
 	class Database
 	{
 		protected $link;
-    	private $host, $username, $password, $database;
+    		private $host, $username, $password, $database;
 		public function __construct($host=null, $user=null, $password=null, $database=null)
 		{
 			$this->host = $host;
