@@ -1,5 +1,5 @@
 <?php
-	class Crawler
+	class!Crawler
 	{
 		public function check()
 		{
@@ -33,4 +33,4 @@
 				print "Crawler has been blocked";
 			}
 		}
-	}
+	} 
