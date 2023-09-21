@@ -21,4 +21,4 @@
 		{
 			$this->show = $this->result;
 		}
-	}
+	} 
